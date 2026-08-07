@@ -1,15 +1,15 @@
 ---
 layout: page
-title: E-commerce Recommendation System
-description: 3-stage personalized recommendations (retrieval → ranking → filtering) plus semantic "Similar Items" on product pages
+title: Personalized Marketplace Discovery
+description: 3-stage personalized recommendations (retrieval → ranking → filtering) plus semantic "Similar Items" for marketplace product discovery
 img: assets/img/5.jpg
-importance: 3
+importance: 1
 category: work
 ---
 
-**Problem:** Product discovery is broken when a catalogue is large. Users miss items they'd buy; "popular items" lists don't personalize.
+**Problem:** Product discovery breaks down when a marketplace catalogue is large. Users miss items they'd buy; generic "popular items" lists don't personalize.
 
-**Two recommendation surfaces:**
+**Two discovery surfaces:**
 
 1. **"Recommended for You" (homepage)** — personalized recommendations using a 3-stage pipeline:
    - *Retrieval*: candidate generation from a large catalogue (fast, approximate)

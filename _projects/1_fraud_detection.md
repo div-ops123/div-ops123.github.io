@@ -5,6 +5,7 @@ description: Sub-100ms fraud risk scoring with async prediction logging via Redi
 img: assets/img/1.jpg
 importance: 1
 category: work
+published: false
 ---
 
 **Problem:** Credit card fraud requires real-time decisions — batch scoring is too slow. But logging predictions to a database on the hot serving path adds latency that compounds under load.

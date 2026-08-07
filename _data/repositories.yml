@@ -1,14 +1,9 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - div-ops123
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - div-ops123/real-time-fraud-detection-system
+  - div-ops123/kkbox-churn-prediction-system
+  - div-ops123/ecommerce-recommendation-system
