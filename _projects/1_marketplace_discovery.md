@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Personalized Marketplace Discovery
-description: 3-stage personalized recommendations (retrieval → ranking → filtering) plus semantic "Similar Items" for marketplace product discovery
+description: A two-stage (retrieval → ranking) recommendation engine powering personalized "Similar Items" recommendations on marketplace product pages
 img: assets/img/5.jpg
 importance: 1
 category: work
@@ -9,17 +9,14 @@ category: work
 
 **Problem:** Product discovery breaks down when a marketplace catalogue is large. Users miss items they'd buy; generic "popular items" lists don't personalize.
 
-**Two discovery surfaces:**
+**How it works** — "Similar Items" recommendations on the product page, powered by a two-stage pipeline:
 
-1. **"Recommended for You" (homepage)** — personalized recommendations using a 3-stage pipeline:
-   - *Retrieval*: candidate generation from a large catalogue (fast, approximate)
-   - *Ranking*: a learned model scores candidates against the user's history
-   - *Filtering*: business rules applied last (out-of-stock removal, diversity constraints, promotion slots)
+- **Retrieval**: given the item a shopper is viewing, a Siamese sentence-embedding encoder (PyTorch) generates an embedding, and a FAISS index returns its nearest neighbors — items that are semantically similar, not just frequently co-purchased.
 
-2. **"Similar Items" (product page)** — semantic similarity using PyTorch embeddings, so recommendations reflect actual product meaning, not just co-purchase history.
+- **Ranking**: a LightGBM model re-scores those candidates using item and user features, ordering them by purchase likelihood personalized to that shopper.
 
-**Why 3 stages?** Applying a heavy ranking model to the full catalogue is computationally infeasible. The retrieval stage narrows thousands of items to hundreds; the ranker scores those accurately; filtering applies non-ML business constraints without polluting model training.
+**Why two stages?** Running a heavy ranking model over the full catalogue is computationally infeasible. Retrieval narrows thousands of items down to a couple hundred candidates cheaply; ranking then applies a more expensive, more accurate model to just that shortlist.
 
-**Stack:** Python · PyTorch · Prefect · MLflow · DVC · Docker · scikit-learn
+**Stack:** Python · PyTorch · LightGBM · FAISS · Apache Airflow · MLflow · FastAPI · Docker
 
-[View on GitHub](https://github.com/div-ops123/ecommerce-recommendation-system)
+[View on GitHub](https://github.com/div-ops123/Personalized-Marketplace-Discovery)

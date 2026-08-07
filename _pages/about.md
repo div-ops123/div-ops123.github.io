@@ -23,8 +23,8 @@ latest_posts:
   enabled: false
 ---
 
-I build end-to-end ML systems that solve real business problems — not just accurate models, but production pipelines that handle data drift, serve predictions at scale, and give businesses time to act.
+I build end-to-end ML systems that solve real business problems — not just accurate models, but systems designed the way production systems have to be: scoped for real latency and scale constraints, evaluated against thresholds tied to business impact instead of offline accuracy alone, and built to give businesses time to act before problems get expensive.
 
-My signature project, **Personalized Marketplace Discovery**, is a multi-stage recommendation engine — retrieval, ranking, and business-rule filtering — that powers both personalized homepage results and semantic "Similar Items" recommendations on product pages. Alongside it, I built a **subscription churn predictor** for KKBOX, engineered to give retention teams a 14-day window to intervene before a subscriber leaves. Currently studying AI Engineering at [Antern](https://antern.co).
+My signature project, **Personalized Marketplace Discovery**, is a two-stage recommendation engine — retrieval and ranking — that powers semantic "Similar Items" recommendations on product pages: given the item a shopper just viewed, it retrieves semantically similar candidates from a FAISS index, then re-ranks them by purchase likelihood personalized to that user.
 
-My stack centers on orchestrated, reproducible pipelines — Prefect for orchestration, MLflow for experiment tracking, DVC for data versioning, Docker for containerization — with scikit-learn and PyTorch for the models themselves. I care about closing the gap between a trained model and a system that actually works in production.
+Alongside it, I built a **churn predictor** for a subscription-based business — scoring risk 14 days before expiry so retention teams have real runway to act, and automatically retraining itself when a monthly performance check shows accuracy degrading, rather than silently drifting out of date.
